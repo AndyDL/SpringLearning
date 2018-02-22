@@ -19,7 +19,13 @@
    <!--  Constructor-based dependency injection -->
    
    <!--  Setter-based dependency injection -->
-   
+    <bean id="fourthBean" class="com.hpe.andy.test.FourthBean"/>
+    	<property name="fifthBean"><ref bean="fifthBean"/></property>
+    	<property name="sixthBean"><ref bean="sixthBean"/></property>
+    </bean>
+
+    <bean id="fifthBean" class="com.hpe.andy.test.FifthBean"/>
+	<bean id="sixthBean" class="com.hpe.andy.test.SixthBean"/>
    
    <!--  Setter-based dependency injection -->
 

@@ -9,6 +9,7 @@ public class SecondBean {
 	public ThirdBean getThirdBean() {
 		return thirdBean;
 	}
+
 	public void setThirdBean(ThirdBean thirdBean) {
 		this.thirdBean = thirdBean;
 	}
