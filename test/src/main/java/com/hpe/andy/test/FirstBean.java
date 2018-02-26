@@ -2,25 +2,32 @@ package com.hpe.andy.test;
 
 import java.beans.ConstructorProperties;
 
-public class FirstBean{
+public class FirstBean implements Doable{
 
 	private String name;
 	private int age;
 	private int grade;
 	private String namedParameter; 
 	private SecondBean secondBean;
+	private SecondBean segundoBean;
+
 	
 	//Constructor
 	public FirstBean(){	
 	}
 	
-	@ConstructorProperties("namedParameter")
+
 	public FirstBean(SecondBean secondBean, int age, String name, int grade, String namedParameter){	
 		this.secondBean = secondBean;
 		this.age = age;
 		this.name = name;
 		this.grade = grade;
 		this.namedParameter = namedParameter;
+	}
+	
+	
+	public void setSegundoBean(SecondBean segundoBean) {
+		this.segundoBean = segundoBean;
 	}
 	
 	
@@ -38,6 +45,12 @@ public class FirstBean{
 
 	public void setAge(int age) {
 		this.age = age;
+	}
+
+	
+	public void printSomething() {
+		System.out.println("From FirstBean");
+		
 	}
 
 	

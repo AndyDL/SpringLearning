@@ -1,13 +1,17 @@
 package com.hpe.andy.test;
 
-/**
- * Hello world!
- *
- */
-public class App 
-{
-    public static void main( String[] args )
-    {
-        System.out.println( "Hello World!" );
+
+import org.springframework.context.ApplicationContext;
+import org.springframework.context.support.ClassPathXmlApplicationContext; 
+
+public class App {
+    public static void main( String[] args ){
+    	
+    	ApplicationContext context = new ClassPathXmlApplicationContext("file:src/main/resources/firstLayer.xml");
+        SecondBean bean = (SecondBean) context.getBean("segundoBean");
+        //FirstBean bean = context.getBean("firstBean", Firstbean.class);
+        bean.printSomething();
+       
+        
     }
 }

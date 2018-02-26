@@ -1,10 +1,13 @@
 package com.hpe.andy.test;
 
-public class SecondBean {
+public class SecondBean implements Doable {
 
 	private String name;
 	private int age;
 	private ThirdBean thirdBean;
+	
+	
+
 	
 	public ThirdBean getThirdBean() {
 		return thirdBean;
@@ -24,6 +27,11 @@ public class SecondBean {
 	}
 	public void setAge(int age) {
 		this.age = age;
+	}
+
+	public void printSomething() {
+		System.out.println("From SecondBean");
+		
 	}
 	
 	

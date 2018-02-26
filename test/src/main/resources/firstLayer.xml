@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+	http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-2.5.xsd">
+  
+  <!--  Constructor-based dependency injection -->  
+	  <!-- Bean Definition -->
+	   <bean id="firstBean" name="Beanner" class="com.hpe.andy.test.FirstBean">
+	   	<constructor-arg ref="secondBean"/>
+	   	<constructor-arg type="int" value="7500000"/>
+		<constructor-arg type="java.lang.String" value="42"/>
+		<constructor-arg index="3" value="500000"/>
+		<constructor-arg name="namedParameter" value="Parametro con nombre"/>
+		<property name="segundoBean" ref="segundoBean"></property>
+	   </bean>
+	   
+	   
+	  <!-- Dependencies Definition -->
+	   <bean id="secondBean" class="com.hpe.andy.test.SecondBean"/>
+	   <bean id="segundoBean" class="com.hpe.andy.test.SecondBean"/>
+	   
+
+   
+</beans>
