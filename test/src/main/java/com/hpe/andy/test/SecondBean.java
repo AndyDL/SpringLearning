@@ -4,11 +4,18 @@ public class SecondBean implements Doable {
 
 	private String name;
 	private int age;
-	private ThirdBean thirdBean;
-	
+	private ThirdBean thirdBean; 
+	private String escuela;
 	
 
-	
+	public String getEscuela() {
+		return escuela;
+	}
+
+	public void setEscuela(String escuela) {
+		this.escuela = escuela;
+	}
+
 	public ThirdBean getThirdBean() {
 		return thirdBean;
 	}

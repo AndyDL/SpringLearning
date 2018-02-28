@@ -5,10 +5,12 @@
 	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
 	http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-2.5.xsd">
   
+  <context:property-placeholder location="file:src/main/resources/config.properties"/>
+  
   <!--  Constructor-based dependency injection -->  
 	  <!-- Bean Definition -->
 	   <bean id="firstBean" name="Beanner" class="com.hpe.andy.test.FirstBean">
-	   	<constructor-arg ref="secondBean"/>
+	   	<constructor-arg name="secondBean" ref="secondBean"/>
 	   	<constructor-arg type="int" value="7500000"/>
 		<constructor-arg type="java.lang.String" value="42"/>
 		<constructor-arg index="3" value="500000"/>
@@ -19,8 +21,8 @@
 	   
 	  <!-- Dependencies Definition -->
 	   <bean id="secondBean" class="com.hpe.andy.test.SecondBean"/>
-	   <bean id="segundoBean" class="com.hpe.andy.test.SecondBean"/>
-	   
+	   <bean id="segundoBean" class="com.hpe.andy.test.SecondBean">
+	   	<property name="escuela" value="${segundoBean.escuela}"></property>
+	   </bean>
 
-   
 </beans>

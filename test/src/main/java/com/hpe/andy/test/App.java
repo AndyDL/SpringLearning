@@ -11,7 +11,7 @@ public class App {
         SecondBean bean = (SecondBean) context.getBean("segundoBean");
         //FirstBean bean = context.getBean("firstBean", Firstbean.class);
         bean.printSomething();
-       
-        
+        System.out.println(bean.getEscuela());
+
     }
 }
